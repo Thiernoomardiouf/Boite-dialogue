@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>BOITE A IDEE</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center py-3">BOITE A IDEES</h1>
+            <div class="row mb-2">
+                <div class="col">
+                    <form action="index.html" method="post">
+                        <div class="mb-3">
+                            <label for="titre" class="form-label">Titre</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="titre"
+                                name="titre"
+                                placeholder="Ex : Brief......"
+                                aria-describedby="titreHelp"
+                            />
+                            <div id="titreHelp" class="form-text">
+                                Merci de donner un titre clair pourla
+                                catégorisation
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="suggestion" class="form-label"
+                                >Suggestion</label
+                            >
+                            <textarea
+                                class="form-control"
+                                id="suggestion"
+                                name="suggestion"
+                                rows="3"
+                            ></textarea>
+                            <p id="limite-text">
+                                Contenu saisi
+                                <span id="text-progress">00 </span> / 130
+                            </p>
+                            <p id="text-restant"></p>
+                        </div>
+                        <button
+                            type="submit"
+                            id="btn-suggestion"
+                            class="btn btn-danger float-end"
+                            style="background-color: #ce0033"
+                        >
+                            Envoyer
+                        </button>
+                    </form>
+                </div>
+                <div class="col d-flex flex-column justify-center-start align-items-center">
+                    <img src="./images/fille.svg" class="img-fluid" alt="" />
+                </div>
+            </div>
+            <div class="row d-flex justify-center-start align-items-center">
+                <div class="col d-flex justify-center-start align-items-center">
+                    <div class="percentage bg-danger rounded-circle me-5 my-4">
+                        
+                    </div>
+                    <div class="legende">
+                        <div class="accepted">
+                            <p class="text-success">Accepté <span class="mx-2 pourcentage-accepte fw-bold text-l">0%</span></p>
+                        </div>
+                        <div class="refused">
+                            <p class="text-danger">Refusé <span class="mx-2 pourcentage-refuse fw-bold">0%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="chart_div" data-accept="0" data-refuse="0"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center my-5">
+                <h3>La liste des propostions</h3>
+                <div>
+                    <button type="button" class="filtre-tous btn  me-2 btn-outline-secondary btn">Tous</button>
+                    <button type="button" class="filtre-refuse btn btn-outline-danger btn me-2">Refusée</button>
+                    <button type="button" class="filtre-accepte btn btn-outline-success btn">Acceptée</button>
+                </div>
+            </div>
+            <div class="row" id="propositions"></div>
+        </div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+         
+
+        <script src="app.js" type="module"></script>
+
+        
+    </body>
+    </html>
+    
